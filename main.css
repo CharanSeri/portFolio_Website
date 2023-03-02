@@ -52,13 +52,14 @@ a {
   padding: 0vw 1.5vw;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 #img-track {
   display: flex;
   position: absolute;
   gap: 4vmin;
   left: 50%;
-  top: 140%;
+  top: 150%;
   transform: translate(0%, -50%);
   user-select: none;
   scroll-behavior: smooth;
@@ -97,9 +98,18 @@ a {
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-  body {
     overflow-x: hidden;
+  }
+  #img-track {
+    flex-direction: column;
+    position: relative;
+    left: 0%;
+    margin: 20vw 0vh 0 20vw;
+    width: 80%;
+    height: 100%;
+    object-fit: fill;
+    padding-bottom: 5vh;
+    transform: translate(0%, -120%);
   }
 }
 @keyframes fadeInOpacity {
