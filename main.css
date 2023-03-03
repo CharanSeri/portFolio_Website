@@ -46,6 +46,13 @@ a {
   justify-content: space-between;
   border-bottom: solid 0.5px grey;
 }
+.links {
+  display: flex;
+  align-items: center;
+}
+.links > a {
+  margin: 0 1vw 0 0;
+}
 
 .main > .intro,
 .image {
@@ -59,7 +66,7 @@ a {
   position: absolute;
   gap: 4vmin;
   left: 50%;
-  top: 150%;
+  top: 130%;
   transform: translate(0%, -50%);
   user-select: none;
   scroll-behavior: smooth;
