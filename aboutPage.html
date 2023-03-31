@@ -13,34 +13,28 @@
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    <div class="header">
-      <a href="./main.html"><h1 class="gradient-text">Sai Charan</h1></a>
-      <div class="links">
-        <a
-          href="https://www.linkedin.com/in/sai-charan-seri-635a61196/"
-          target="_blank"
-        >
-          <img src="./images/linkedInLogo.png" />
-        </a>
-        <hr style="height: 5vh; margin: 0 10px" />
-        <a href="./aboutPage.html"><h1>About</h1></a>
+    <div class="wrapper">
+      <div class="navBar navBarAbout">
+        <a href="./index.html" class="inActiveLink">Sai Charan</a>
+        <div style="display: flex; flex-direction: row; gap: 2rem">
+          <a
+            href="https://www.linkedin.com/in/sai-charan-seri-635a61196/"
+            target="_blank"
+            class="inActiveLink"
+          >
+            <img
+              src="./images/linkedInLogo.png"
+              style="height: 1.5rem; width: 1.5rem"
+            />
+          </a>
+          <a href="./aboutPage.html" >About </a>
+        </div>
       </div>
-    </div>
     <div class="aboutBody">
-      <h1>Info about <span class="gradient-text">me</span></h1>
+      <h1 class="title">Info about me.</h1>
       <div class="intro">
         <p>
-          I am a motivated and curious individual with a passion for emerging
-          technologies in the field of mobile and web application development. I
-          recently completed the Mobile Application Development program at
-          Algonquin College in Ottawa, where I gained expertise in a range of
-          technologies, including Flutter and Progressive Web Apps. Throughout
-          my education, I developed a strong ability to collaborate effectively
-          with cross-functional teams, working towards win-win solutions with a
-          focus on synergy. I am now eager to bring my industry-standard skills
-          and enthusiasm for innovation to a dynamic organization in need of a
-          motivated and forward-thinking team member. Let's work together to
-          bring your ideas to life!
+          I work in mobile and web app development, particularly with react, JS and Progressive Web Apps.skilled in collaboration and focused on creating win-win solutions with cross-functional teams. I am a motivated and innovative team member ready to bring your skills to a dynamic organization!
         </p>
       </div>
       <div class="expertise">
@@ -63,9 +57,9 @@
         </ul>
       </div>
       <div class="experience">
-        <h1>Work <span class="gradient-text"> experience </span></h1>
+        <div class="title">Work experience </div>
         <div class="stacklabs">
-          <h2 style="text-decoration: underline">Stacklabs [present]</h2>
+          <div class="content" style="text-decoration: underline">Stacklabs [present]</div>
           <p>
             As a Developer and Designer, I collaborated with a team of seven to
             effectively communicate with clients and ensure their requirements
@@ -95,7 +89,7 @@
           </ul>
         </div>
         <div class="walmart">
-          <h2 style="text-decoration: underline">Walmart [2021-present]</h2>
+          <div class="content" style="text-decoration: underline">Walmart [2021-present]</div>
           <p>
             As a Front End Associate, I am accountable for providing exceptional
             customer service. My duties include:
@@ -111,7 +105,7 @@
           </ul>
         </div>
         <div class="bridgesoft">
-          <h2 style="text-decoration: underline">BridgeSoft [2020-2021]</h2>
+          <div class="content" style="text-decoration: underline">BridgeSoft [2020-2021]</div>
           <p>
             As a Trainee Associate Developer, I work under the guidance of
             experienced 'Sail Point' professionals. My responsibilities include:
@@ -134,7 +128,7 @@
             <li>Reporting to superiors regularly through JIRA.</li>
           </ul>
         </div>
-      </div>
+    </div>
     </div>
   </body>
 </html>
