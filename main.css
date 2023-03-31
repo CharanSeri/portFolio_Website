@@ -135,6 +135,10 @@ header {
   font-size: var(--title);
   text-shadow: 0 0 5px black;
 }
+.content {
+  margin: 1rem;
+  font-size: var(--subtitle);
+}
 .intro {
   font-size: var(--subtitle);
 }
