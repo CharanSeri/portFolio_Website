@@ -29,9 +29,11 @@ header {
   flex-direction: row;
   justify-content: space-around;
 }
-.navBar p {
+.navBar a {
   font-size: 1.5rem;
   font-weight: 800;
+  text-decoration: none;
+  color: var(--white);
   text-shadow: 0 0 5px black;
 }
 
