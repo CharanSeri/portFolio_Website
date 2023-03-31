@@ -73,7 +73,7 @@ header {
 @keyframes titleFadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10%);
+    transform: translateY(10%);
   }
   to {
     opacity: 1;
@@ -84,7 +84,17 @@ header {
 .title {
   font-size: 2rem;
   text-shadow: 0 0 5px black;
-  animation: titleFadeIn 5s linear ease-in;
+  animation: titleFadeIn;
+  animation-duration: 1s;
+}
+
+.logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  animation: titleFadeIn;
+  animation-duration: 1.5s;
 }
 
 .wrapper {
