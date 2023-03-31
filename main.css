@@ -3,6 +3,9 @@
   --white: #ffffff;
   --lightPurple: #7f4ede;
   --darkPurple: #ce4ede;
+  --title: 2rem;
+  --subtitle: 1.43rem;
+  --text: 0.98rem;
 }
 * {
   font-family: "Raleway", sans-serif;
@@ -21,8 +24,8 @@ header {
   z-index: -1;
 }
 .navBar {
-  width: 100%;
   position: absolute;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: 1;
@@ -31,20 +34,27 @@ header {
   flex-direction: row;
   justify-content: space-around;
 }
+.navBarAbout {
+  position: relative;
+}
 .navBar a {
-  font-size: 1.5rem;
+  font-size: var(--subtitle);
   font-weight: 800;
   text-decoration: none;
   color: var(--white);
   text-shadow: 0 0 5px black;
 }
-
+.inActiveLink {
+  width: auto;
+  height: auto;
+  border-bottom: 2px solid var(--white);
+}
 .section {
   width: 100%;
-  height: 100vh;
+  height: 60vh;
   position: absolute;
   background-color: var(--green);
-  font-size: 2rem;
+  font-size: var(--title);
   padding: 2rem;
   margin-top: 10rem;
   z-index: 9999;
@@ -62,7 +72,11 @@ header {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
-
+.aboutBody {
+  position: relative;
+  animation: titleFadeIn;
+  animation-duration: 1s;
+}
 .background {
   transform: translateZ(-20px) scale(3);
 }
@@ -94,7 +108,7 @@ header {
   left: 50%;
   user-select: none;
   scroll-behavior: smooth;
-  margin-top: 1.5rem;
+  margin: 0 1.5rem;
   background-color: var(--green);
 }
 
@@ -118,12 +132,22 @@ header {
 }
 
 .title {
-  font-size: 2rem;
+  font-size: var(--title);
   text-shadow: 0 0 5px black;
-  animation: titleFadeIn;
-  animation-duration: 1s;
 }
-
+.intro {
+  font-size: var(--subtitle);
+}
+.expertise {
+  font-size: var(--text);
+  margin-top: 1rem;
+}
+.aboutBody {
+  padding: 2rem;
+}
+.experience {
+  margin-top: 2rem;
+}
 .logos {
   display: flex;
   flex-direction: row;
