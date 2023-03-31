@@ -27,7 +27,7 @@
               style="height: 1.5rem; width: 1.5rem"
             />
           </a>
-          <a href="#"> About </a>
+          <a href="#">About </a>
         </div>
       </div>
       <header>
@@ -70,44 +70,90 @@
         </div>
       </header>
       <div class="section">
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic tempora
-          eligendi ea saepe recusandae. Eos commodi illum labore doloribus minus
-          at maiores quod corrupti cum vero itaque voluptatibus, quas laborum
-          necessitatibus soluta dolore fugiat expedita fuga accusamus numquam
-          consectetur inventore eum. Incidunt sed deleniti eum architecto unde
-          magnam consequuntur, eos sequi consequatur esse quidem corrupti
-          quaerat veritatis ducimus laudantium quibusdam quod libero assumenda
-          provident delectus eligendi modi ipsum voluptas numquam. In harum
-          itaque, doloribus quibusdam ullam illo ratione, vitae natus, rerum
-          perferendis quaerat laudantium? Cupiditate ullam voluptas eligendi
-          minus dolore itaque similique veritatis suscipit iure consectetur
-          aperiam dolorum adipisci maiores tempora, expedita eum vel maxime
-          quibusdam? Impedit aliquid voluptate tempore officiis ut odit suscipit
-          mollitia ipsam eum quisquam, natus enim consequuntur est tenetur,
-          debitis consectetur repellat accusantium aspernatur corrupti facilis
-          sequi dolorem odio placeat. Perspiciatis facere totam facilis eaque,
-          qui atque, possimus, voluptate voluptas iure consectetur quidem quae
-          recusandae magni pariatur! Officiis consectetur deleniti impedit optio
-          vitae mollitia libero minus hic iure aut tempore accusantium totam
-          nulla quo possimus laborum rerum ad, adipisci reiciendis molestias
-          voluptates cumque id? Hic vero praesentium nam voluptate, ab tenetur
-          fugit voluptatum? Similique alias officia iste mollitia nostrum
-          architecto magnam quis, vero enim? In amet magnam hic consequatur aut
-          error ducimus atque voluptas voluptates, maiores aperiam
-          reprehenderit, nam odit sit recusandae ipsa suscipit nihil quam iure
-          voluptatibus tempore eligendi itaque. Quam doloribus, dignissimos
-          autem et similique expedita, natus dolores ullam, doloremque possimus
-          hic? Distinctio quod quas alias officia excepturi dignissimos, ipsam
-          magnam voluptatibus exercitationem, facere quam vitae dolorem
-          voluptatum. Ex consectetur placeat quam? Qui veritatis expedita ipsam
-          assumenda molestiae nisi illo ad magni pariatur eaque eum laborum
-          corporis commodi dolorum, consequatur saepe voluptates nesciunt
-          aliquid sunt delectus possimus aperiam doloremque consequuntur.
-          Consequuntur error exercitationem voluptatibus necessitatibus, optio,
-          fuga temporibus animi alias, voluptate quo nostrum quod?
-        </p>
+        <div class="title">Some of my work</div>
+        <div id="img-track" data-mouse-down-at="0" data-prev-percentage="0">
+          <img
+            src="./images/Giftr-App.png"
+            alt="Image of Gift Idea Application"
+            class="image"
+            draggable="false"
+          />
+          <img
+            src="./images/TikiTaka-ChromeExtension.png"
+            alt="Image of chrome extension"
+            class="image"
+            draggable="false"
+          />
+          <img
+            src="./images/EnerpikClient.png"
+            alt="Image of weather application using react and weather Api"
+            class="image"
+            draggable="false"
+          />
+          <img
+            src="./images/RactHuluClone-App.png"
+            class="image"
+            alt="Image of react hulu clone app"
+            draggable="false"
+          />
+          <img
+            src="./images/ReactSpotifyClone-App.png"
+            alt="Image of spoityclone react applicaton"
+            class="image"
+            draggable="false"
+          />
+          <img
+            src="./images/ReactWeather-App.png"
+            alt="Image of weather application using react and weather Api"
+            class="image"
+            draggable="false"
+          />
+          <img
+            src="./images/TowerDefenceGame-App.png"
+            alt="Image of TowerDefence Game using JS and Canvas on html"
+            class="image"
+            draggable="false"
+          />
+        </div>
       </div>
     </div>
+    <script>
+      const track = document.getElementById("img-track");
+      window.onmousedown = (e) => {
+        track.dataset.mouseDownAt = e.clientX;
+      };
+      window.onmouseup = () => {
+        track.dataset.mouseDownAt = "0";
+        track.dataset.prevPercentage = track.dataset.percentage;
+      };
+      window.onmousemove = (e) => {
+        if (track.dataset.mouseDownAt === "0") return;
+        const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+          maxDelta = window.innerWidth / 2;
+        const percentage = (mouseDelta / maxDelta) * -100;
+        nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
+        nextPercentage = Math.min(nextPercentage, 0);
+        nextPercentage = Math.max(nextPercentage, -100);
+
+        //nextPercentage = Math.min(nextPercentageUnconstrained, 0);
+        track.dataset.percentage = nextPercentage;
+        track.animate(
+          {
+            transform: `translate(${nextPercentage}%,0%)`,
+          },
+          { duration: 1200, fill: "forwards" }
+        );
+        track.style.transform = `translate(${nextPercentage}%,0%)`;
+        for (const image of track.getElementsByClassName("image")) {
+          // image.style.objectPosition = `${nextPercentage + 100} 50%`;
+          image.animate(
+            {
+              objectPosition: `${100 + nextPercentage}% 50%`,
+            },
+            { duration: 1200, fill: "forwards" }
+          );
+        }
+      };
+    </script>
   </body>
 </html>
